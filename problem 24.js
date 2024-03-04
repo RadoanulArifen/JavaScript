@@ -1,0 +1,14 @@
+
+
+//Counting number of a digit in an integer
+function digitCount (num){
+   let count =0
+
+   while(num!=0){
+    num=Math.floor(num/10)
+    ++count
+   }
+   return count
+}
+console.log(digitCount(1234))
+console.log(digitCount(98760876))
