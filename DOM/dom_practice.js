@@ -1,15 +1,14 @@
-const marry = ["a","b","c",];
-console.log( marry)
-console.log( marry[2])
-marry.push("Arifen")
-console.log(marry)
+const kidnapped = document.getElementsByTagName("h1");
+ 
+console.log(kidnapped[0]);
+kidnapped[0].remove;
 
 
 
-const item = ["a","b","c","d","e"];
-console.log(item)
-function tell(item){
-    return item + "____";
+function chnageBG(){
+    const lalala_item = document.getElementById("lala");
+    lalala_item.style.backgroundColor = "red";
 }
-const item_tell = item.map(tell)
-console.log(item_tell)
+
+const bg_button = document.getElementById("bg");
+bg_button.addEventListener("click",chnageBG)
