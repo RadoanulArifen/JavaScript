@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Rating</title>
+  <style>
+    body {
+      background-color: #0f0f1b;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+    }
+
+    .rating-form {
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .rating-form input, .rating-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      background-color: #1f1f2e;
+      color: white;
+    }
+
+    .stars {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      font-size: 2rem;
+      color: #444;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: gold;
+    }
+
+    button {
+      background-color: #a88bfc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .reviews {
+      margin-top: 2rem;
+    }
+
+    .review {
+      background-color: #1f1f2e;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
+    .review h4 {
+      margin: 0 0 5px;
+      font-size: 1.2rem;
+      color: #a88bfc;
+    }
+
+    .review .stars-display {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Rate My Work</h2>
+  <form class="rating-form" id="ratingForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <div class="stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+    </div>
+
+    <textarea id="review" placeholder="Write your review..." rows="4" required></textarea>
+    <button type="submit">Submit Rating</button>
+  </form>
+
+  <div class="reviews" id="reviews"></div>
+
+  <script>
+    const form = document.getElementById('ratingForm');
+    const reviewsDiv = document.getElementById('reviews');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const review = document.getElementById('review').value;
+      const rating = document.querySelector('input[name="rating"]:checked');
+
+      if (!rating) {
+        alert("Please select a rating!");
+        return;
+      }
+
+      const ratingValue = rating.value;
+
+      // Create review element
+      const reviewEl = document.createElement('div');
+      reviewEl.classList.add('review');
+      reviewEl.innerHTML = `
+        <h4>${name}</h4>
+        <div class="stars-display">${'★'.repeat(ratingValue)}${'☆'.repeat(5 - ratingValue)}</div>
+        <p>${review}</p>
+      `;
+
+      reviewsDiv.prepend(reviewEl);
+
+      // Clear form
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
