@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Events</title>
+</head>
+<body>
+    <button onclick="commonEvent('Button clicked!')">Click Me</button>
+    <button onmouseover="commonEvent('onmouseover Button clicked!')">Click Me</button>
+    <button onmouseout="commonEvent('onmouseout Button clicked!')">Click Me</button>
+    <button onmousedown="commonEvent('onmousedown Button clicked!')">Click Me</button>
+    <button onload="commonEvent('onmouseup Button clicked!')">Click Me</button>
+    <input type="text" onchange="commonEvent('onchange Button clicked!')">
+    <input type="text" onfocus="commonEvent('onfocus Button clicked!')">
+    <input type="text" onblur="commonEvent('onblur Button clicked!')">
+    <input type="text" onkeydown="commonEvent('onkeydown Button clicked!')">
+    <input type="text" onkeyup="commonEvent('onkeyup Button clicked!')">
+    <input type="text" onkeypress="commonEvent('onkeypress Button clicked!')">
+</body onload="commonEvent('onload Button clicked!')">
+<script>
+    function commonEvent(message) {
+        console.log(message);
+    }
+</script>
+</body>
+</html>
