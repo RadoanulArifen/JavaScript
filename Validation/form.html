@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace
+        }
+
+        body {
+            background: #eef2f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border: 1.5px solid black;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button{
+            width:100%;
+            background:#007bff;;
+            color: white;
+            padding: 10px;
+           
+            font-size: 16px;
+            border-radius: 8px;
+            cursor:pointer;
+            transition: background 0.3s;
+        }
+        button:hover{
+            background: #0056b3;
+        }
+        .error{
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Create Account</h2>
+        <form action="#" enctype="multipart/form-data" onsubmit="return validationform()">
+            <div class="from-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="enter your full name">
+                <span id="nameerror" class="error"></span>
+            </div>
+            <div class="from-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="example@gamil.com">
+                <span id="emailerror" class="error"></span>
+            </div>
+            <div class="from-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="enter your password">
+                <span id="passworderror" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirmpass" name="confirm_password" placeholder="reperat your password">
+                <span id="confirmpassworderror" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload your image</label>
+                <input type="file" name="image" id="image" accept="image/*">
+                <span id="imageerror" class="error"></span>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
