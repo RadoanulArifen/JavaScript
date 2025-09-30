@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input.valid {
+  border-color: green;
+}
+
+input.invalid {
+  border-color: red;
+}
+
+span {
+  color: red;
+  font-size: 0.9rem;
+}
+
+#fib_result {
+  margin-top: 0.5rem;
+  font-style: italic;
+}

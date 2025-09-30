@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+    <span id="ageerror" style="color: red;"></span>
+
+    <script>
+        const dob = document.getElementById('dob').value;
+        const age_error = document.getElementById('ageerror');
+        age_error.innerText = "";
+
+        if (!dob) {
+            age_error.innerText = "Please select your date of birth.";
+            return false;
+        }
+
+        const birthday = new Date(dob);
+        const today = new Date();
+
+        let age = today.getFullYear() - birthday.getFullYear();
+        let m = today.getMonth() - birthday.getMonth()
+
+        if (m < 0 || (m == 0 && today.getDate() < birthday.getDate())) {
+            age--;
+        }
+
+        if (age < 18) {
+            age_error.innerText = "You must be at least 18 years old.";
+            return false;
+        }
+        
+    </script>
+
+</body>
+
+</html>

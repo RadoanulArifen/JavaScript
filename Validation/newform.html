@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Validation Demo</title>
+  <link rel="stylesheet" href="newform.css" />
+</head>
+<body>
+  <form id="myForm" novalidate>
+    <!-- Network IP -->
+    <label for="ip">Network IP:</label>
+    <input type="text" id="ip" />
+    <span id="ip_validate"></span>
+
+    <!-- Date of Birth -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" />
+    <span id="dob_validate"></span>
+
+    <!-- Car Number -->
+    <label for="car">Car Number:</label>
+    <input type="text" id="car" placeholder="e.g. KA01AB1234" />
+    <span id="car_validate"></span>
+
+    <!-- NID Card Number -->
+    <label for="nid">NID Card Number:</label>
+    <input type="text" id="nid" />
+    <span id="nid_validate"></span>
+
+    <!-- Phone Number -->
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="+8801XXXXXXXXX" />
+    <span id="phone_validate"></span>
+
+    <!-- Hex Color Code -->
+    <label for="hex">Hex Color Code:</label>
+    <input type="text" id="hex" placeholder="#a1b2c3" />
+    <span id="hex_validate"></span>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" />
+    <span id="pass_validate"></span>
+
+    <!-- Confirm Password -->
+    <label for="confirm">Confirm Password:</label>
+    <input type="password" id="confirm" />
+    <span id="confirm_validate"></span>
+
+    <!-- Palindrome Check -->
+    <label for="palindrome">Palindrome Check:</label>
+    <input type="text" id="palindrome" placeholder="Type text…" />
+    <span id="pal_validate"></span>
+
+    <!-- Fibonacci Generator -->
+    <label for="fibonacci">Fibonacci Length:</label>
+    <input type="number" id="fibonacci" min="1" />
+    <span id="fib_validate"></span>
+    <div id="fib_result"></div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="newform.js" defer></script>
+</body>
+</html>
